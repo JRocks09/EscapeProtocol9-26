@@ -1,0 +1,12 @@
+Timer UI and Functionality
+2 Enemies to Start
+Key and Locked Door >> We need assets for this too
+Player Controller implementation
+Draw backgrounds
+
+Sound and Looping Music (LATER)
+
+2 or 3 levels
+- 1 level for prototype
+
+

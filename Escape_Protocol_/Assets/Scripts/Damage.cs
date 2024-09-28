@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpikeDamage : MonoBehaviour
+public class Damage : MonoBehaviour
 {
     // Takes the current player's health
     public playerHealth currentPlayerHealth;
-    public float invincibilityTimer = 3;
+    public float invincibilityTimer;
     private bool playerInvincible;
 
     // Damage

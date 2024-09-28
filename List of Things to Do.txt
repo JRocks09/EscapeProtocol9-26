@@ -1,12 +1,15 @@
-Timer UI and Functionality
-2 Enemies to Start
-Key and Locked Door >> We need assets for this too
-Player Controller implementation
-Draw backgrounds
+Anyone can do this:
+- Find One Enemy Asset (Can also program walk cycle too)
 
-Sound and Looping Music (LATER)
+Samari:
+- Sound Effect Implementation (Find all remaining sounds too)
 
-2 or 3 levels
-- 1 level for prototype
+Joseph:
+1 complete level (prototype level can be unfinished)
 
+Isaiah:
+- Timer UI and Functionality
 
+Damone:
+- Find or make assets for key and 2 doors: One activated by buttons (mechanical) and another opened by key (more wooden)
+- Fix button script bug

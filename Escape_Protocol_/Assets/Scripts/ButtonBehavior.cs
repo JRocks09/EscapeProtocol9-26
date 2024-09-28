@@ -5,8 +5,8 @@ using UnityEngine;
 public class ButtonBehavior : MonoBehaviour
 {
 
-public GameObject StartOn;
-public GameObject StartOff;
+public GameObject buttonUp;
+public GameObject buttonDown;
 
 private bool WeightedDown = false;
 
@@ -24,39 +24,26 @@ private bool WeightedDown = false;
 
     
 
-    private void OnCollisionStay2D(Collision2D other) 
+    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Box"))
+        if (collision.gameObject.CompareTag("Box"))
         {
-            StartOn.SetActive(true);
-            StartOff.SetActive(false);
+            buttonDown.SetActive(true);
+            buttonUp.SetActive(false);
 
+            // This will be used for doors later
             WeightedDown = true;
         }
-        else
-        {
-            StartOn.SetActive(false);
-            StartOff.SetActive(true);
-
-            WeightedDown = false;
-        }
-
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+    private void OnTriggerExit2D(UnityEngine.Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Box") && WeightedDown == true)
+        if (collision.gameObject.CompareTag("Box") && WeightedDown == true)
         {
-            StartOn.SetActive(false);
-            StartOff.SetActive(true);
+            buttonDown.SetActive(false);
+            buttonUp.SetActive(true);
 
-            WeightedDown = false;
-        }
-        else
-        {
-            StartOn.SetActive(false);
-            StartOff.SetActive(true);
-
+            // This will be used for doors later
             WeightedDown = false;
         }
     }

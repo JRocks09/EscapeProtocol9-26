@@ -36,14 +36,11 @@ public class ObjectPull : MonoBehaviour
 				rb.constraints = 
 					RigidbodyConstraints2D.FreezePositionX |
 					RigidbodyConstraints2D.FreezeRotation;
-				print("not pushing");
 			}
 			else
 			{
 				xPos = transform.position.x;
 				rb.constraints = RigidbodyConstraints2D.None;
-                print("pushing");
-
             }
 		}
 

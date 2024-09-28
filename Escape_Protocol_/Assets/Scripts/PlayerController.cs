@@ -44,8 +44,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Movement controls
-
+        // Both Movement Keys Held
         if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
         {
             bothKeysHeld = true;
@@ -55,6 +54,7 @@ public class PlayerController : MonoBehaviour
             bothKeysHeld = false;
         }
 
+        // Movement Controls
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && !(bothKeysHeld))
         {
             moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
@@ -84,12 +84,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Jumping
+        // Jumping Mechanics
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && isGrounded)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
         }
 
+        // Jumping Animations
         if (!isGrounded)
         {
             animator.SetBool("InAir", true);

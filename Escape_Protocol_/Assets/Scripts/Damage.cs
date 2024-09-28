@@ -24,14 +24,14 @@ public class SpikeDamage : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
         // If the player collides with the object
-        if (other.gameObject.CompareTag("Player") && !playerInvincible)
+        if (collision.gameObject.CompareTag("Player") && !playerInvincible)
         {
             // Takes away health from the player based on the damage value
             // currentPlayerHealth.health -= damage;
-            other.gameObject.GetComponent<playerHealth>().health -= damage;
+            collision.gameObject.GetComponent<playerHealth>().health -= damage;
             Invoke(nameof(InvincibilityOver), invincibilityTimer);
             playerInvincible = true;
         }

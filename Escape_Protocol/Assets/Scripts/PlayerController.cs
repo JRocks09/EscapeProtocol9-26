@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
 
     AudioSource jumpSound;
 
+    //AudioClip audioclip;
+
+
     //private Animator animator;
 
     bool facingRight = true;
@@ -81,8 +84,9 @@ public class PlayerController : MonoBehaviour
         // Jumping
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
+            //audioclip = "SFX_Jump_06.wav";
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
-            jumpSound.Play();
+            jumpSound.Play();//OneShot(audioclip, 1);
         }
 
         // Camera follow

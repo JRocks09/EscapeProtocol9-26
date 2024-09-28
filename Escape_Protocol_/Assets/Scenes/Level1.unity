@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2aec23979049be48bd7b239688276e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPlayerHealth: {fileID: 774570220}
+  currentPlayerHealth: {fileID: 0}
   damage: 20
 --- !u!60 &275694643
 PolygonCollider2D:
@@ -328,7 +328,6 @@ GameObject:
   - component: {fileID: 774570217}
   - component: {fileID: 774570216}
   - component: {fileID: 774570215}
-  - component: {fileID: 774570220}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -481,21 +480,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &774570220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774570214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7091515035ebda4380b392ed3b03a3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 0
-  healthBar: {fileID: 1623820705}
 --- !u!1 &843632716
 GameObject:
   m_ObjectHideFlags: 0

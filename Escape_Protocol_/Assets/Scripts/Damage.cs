@@ -24,7 +24,7 @@ public class Damage : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
+    private void OnTriggerStay2D(UnityEngine.Collider2D collision)
     {
         // If the player collides with the object
         if (collision.gameObject.CompareTag("Player") && !playerInvincible)

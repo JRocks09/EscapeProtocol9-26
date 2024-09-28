@@ -6,6 +6,7 @@ Samari:
 
 Joseph:
 1 complete level (prototype level can be unfinished)
+Tweaking code as needed
 
 Isaiah:
 - Timer UI and Functionality

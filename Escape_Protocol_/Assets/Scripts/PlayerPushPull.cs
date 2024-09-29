@@ -38,7 +38,7 @@ public class PlayerPushPull : MonoBehaviour
 			HeavyObject.GetComponent<FixedJoint2D> ().enabled = true;
 			HeavyObject.GetComponent<ObjectPull> ().beingPushed = true;
 			// Plays Box Push sound
-			audioManager.PlaySFX(audioManager.boxPush, 3.0f);
+			audioManager.PlaySFX(audioManager.boxPush, 1.0f);
 		} 
 		else if (Input.GetKeyUp (KeyCode.P)) 
 		{

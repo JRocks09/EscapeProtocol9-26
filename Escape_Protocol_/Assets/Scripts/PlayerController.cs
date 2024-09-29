@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && isGrounded)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
-            audioManager.PlaySFX(audioManager.jump);
+            audioManager.PlaySFX(audioManager.jump, 0.4f);
 
             
         }

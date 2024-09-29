@@ -10,6 +10,15 @@ public class PlayerPushPull : MonoBehaviour
 
 	GameObject HeavyObject;
 
+	// Sound
+	AudioManager audioManager;
+
+	// Sound Initializing
+	private void Awake()
+	{
+		audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+	}
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -28,6 +37,8 @@ public class PlayerPushPull : MonoBehaviour
 			HeavyObject.GetComponent<FixedJoint2D> ().connectedBody = GetComponent<Rigidbody2D> ();
 			HeavyObject.GetComponent<FixedJoint2D> ().enabled = true;
 			HeavyObject.GetComponent<ObjectPull> ().beingPushed = true;
+			// Plays Box Push sound
+			audioManager.PlaySFX(audioManager.boxPush, 3.0f);
 		} 
 		else if (Input.GetKeyUp (KeyCode.P)) 
 		{

@@ -9,8 +9,18 @@ public class Damage : MonoBehaviour
     public float invincibilityTimer;
     private bool playerInvincible;
 
+    // Sound
+    AudioManager audioManager;
+
+
     // Damage
     public float damage;
+
+    // Sound Initializing
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +44,9 @@ public class Damage : MonoBehaviour
             collision.gameObject.GetComponent<playerHealth>().health -= damage;
             Invoke(nameof(InvincibilityOver), invincibilityTimer);
             playerInvincible = true;
+
+            // Plays Damage Taken sound
+            audioManager.PlaySFX(audioManager.damageTaken, 10.0f);
         }
     }
 

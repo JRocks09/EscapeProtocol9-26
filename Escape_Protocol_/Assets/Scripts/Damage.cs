@@ -40,7 +40,6 @@ public class Damage : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && !playerInvincible)
         {
             // Takes away health from the player based on the damage value
-            // currentPlayerHealth.health -= damage;
             collision.gameObject.GetComponent<playerHealth>().health -= damage;
             Invoke(nameof(InvincibilityOver), invincibilityTimer);
             playerInvincible = true;

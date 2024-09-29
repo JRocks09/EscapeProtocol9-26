@@ -45,6 +45,13 @@ public class ButtonBehavior : MonoBehaviour
             // This will be used for doors later
             WeightedDown = true;
         }
+        else
+        {
+            buttonDown.SetActive(false);
+            buttonUp.SetActive(true);
+
+            WeightedDown = false;
+        }
     }
 
     private void OnTriggerExit2D(UnityEngine.Collider2D collision)
@@ -57,6 +64,12 @@ public class ButtonBehavior : MonoBehaviour
             // This will be used for doors later
             WeightedDown = false;
         }
-    }
+     else
+        {
+            buttonDown.SetActive(false);
+            buttonUp.SetActive(true);
 
+            WeightedDown = false;
+        }
+    }
 }

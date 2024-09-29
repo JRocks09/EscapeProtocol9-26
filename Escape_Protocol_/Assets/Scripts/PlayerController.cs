@@ -23,6 +23,15 @@ public class PlayerController : MonoBehaviour
     Transform t;
     private Animator animator;
 
+	// Sound
+	AudioManager audioManager;
+
+	// Sound Initializing
+	private void Awake()
+	{
+		audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+	}
+
     // Use this for initialization
     void Start()
     {
@@ -34,6 +43,7 @@ public class PlayerController : MonoBehaviour
         r2d.gravityScale = gravityScale;
         facingRight = t.localScale.x > 0;
         animator = GetComponent<Animator>();
+
 
         if (mainCamera)
         {
@@ -88,6 +98,9 @@ public class PlayerController : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && isGrounded)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+            audioManager.PlaySFX(audioManager.jump, 0.4f);
+
+            
         }
 
         // Jumping Animations

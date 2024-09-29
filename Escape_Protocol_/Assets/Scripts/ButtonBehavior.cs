@@ -5,10 +5,19 @@ using UnityEngine;
 public class ButtonBehavior : MonoBehaviour
 {
 
-public GameObject buttonUp;
-public GameObject buttonDown;
+    public GameObject buttonUp;
+    public GameObject buttonDown;
 
-private bool WeightedDown = false;
+    private bool WeightedDown = false;
+
+    // Sound
+    AudioManager audioManager;
+
+    // Sound Initializing
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +39,8 @@ private bool WeightedDown = false;
         {
             buttonDown.SetActive(true);
             buttonUp.SetActive(false);
+            // Plays Box Push sound
+            audioManager.PlaySFX(audioManager.buttonPush, 10.0f);
 
             // This will be used for doors later
             WeightedDown = true;

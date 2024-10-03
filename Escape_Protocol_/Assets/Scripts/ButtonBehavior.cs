@@ -33,7 +33,7 @@ public class ButtonBehavior : MonoBehaviour
 
     
 
-    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
+    private void OnTriggerStay2D(UnityEngine.Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Box"))
         {

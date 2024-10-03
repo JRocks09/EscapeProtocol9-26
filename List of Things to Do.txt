@@ -1,16 +1,20 @@
 Anyone can do this:
-- Find One Enemy Asset (Can also program walk cycle too)
 
 Samari:
-- Sound Effect Implementation (Find all remaining sounds too)
+- Find One Enemy Asset, and program movement (Can also program walk cycle too)
+- Work on Title Screen, Intro Text, game over, end screen functionality >> Changing scenes 
 
 Joseph:
-1 complete level (prototype level can be unfinished)
-Tweaking code as needed
+- 1 complete level
+- Tweaking code as needed
 
 Isaiah:
 - Timer UI and Functionality
+- Fix I-Frames of damage (right now damage is calculated individually for each damage source, not altogether)
+- Create condition when the player is dead and make sure the scene is reloaded properly after game over screen is cleared
+    - Will be discussed on Thursday a bit more
 
-Damone:
-- Find or make assets for key and 2 doors: One activated by buttons (mechanical) and another opened by key (more wooden)
-- Fix button script bug
+Damon:
+- Fix button visual bug
+- Figure out redirecting player position relative to the spikes as well (not needed, but would nice)
+- Ending screen art

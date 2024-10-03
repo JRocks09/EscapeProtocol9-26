@@ -18,3 +18,4 @@ Damon:
 - Fix button visual bug
 - Figure out redirecting player position relative to the spikes as well (not needed, but would nice)
 - Ending screen art
+- Ending Door asset (with lock on it, visually)

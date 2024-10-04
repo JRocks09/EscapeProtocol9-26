@@ -2,7 +2,8 @@ Anyone can do this:
 
 Samari:
 - Find One Enemy Asset, and program movement (Can also program walk cycle too)
-- Work on Title Screen, Intro Text, game over, end screen functionality >> Changing scenes 
+- Work on Title Screen, Intro Text, game over, end screen functionality >> Changing scenes
+- Checkpoint functionality?
 
 Joseph:
 - 1 complete level
@@ -12,10 +13,15 @@ Isaiah:
 - Timer UI and Functionality
 - Fix I-Frames of damage (right now damage is calculated individually for each damage source, not altogether)
 - Create condition when the player is dead and make sure the scene is reloaded properly after game over screen is cleared
-    - Will be discussed on Thursday a bit more
+      - Can only be implemented once game over screen exists
+- Moving platform >> Goes a fixed distance back and forth horizontally between two position values
+      - If you can't figure this out, let me know and I'll contact Damon to make a bridge asset for the gap instead
 
 Damon:
 - Fix button visual bug
-- Figure out redirecting player position relative to the spikes as well (not needed, but would nice)
 - Ending screen art
 - Ending Door asset (with lock on it, visually)
+- Starting Door (LABS on it)
+- Checkpoint Asset
+- Sign asset to add text to (really basic sign, no text is needed within the asset)
+- Other art for title and game over screens

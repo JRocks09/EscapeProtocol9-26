@@ -7,8 +7,9 @@ public class ButtonBehavior : MonoBehaviour
 
     public GameObject buttonUp;
     public GameObject buttonDown;
+    public GameObject door;
 
-    private bool WeightedDown = false;
+    private bool weightedDown = false;
 
     // Sound
     AudioManager audioManager;
@@ -28,7 +29,7 @@ public class ButtonBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       door.SetActive(!weightedDown);
     }
 
     
@@ -39,37 +40,43 @@ public class ButtonBehavior : MonoBehaviour
         {
             buttonDown.SetActive(true);
             buttonUp.SetActive(false);
-            // Plays Box Push sound
-            audioManager.PlaySFX(audioManager.buttonPush, 10.0f);
 
             // This will be used for doors later
-            WeightedDown = true;
+            weightedDown = true;
         }
         else
         {
             buttonDown.SetActive(false);
             buttonUp.SetActive(true);
 
-            WeightedDown = false;
+            weightedDown = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            audioManager.PlaySFX(audioManager.buttonPush, 10.0f);
         }
     }
 
     private void OnTriggerExit2D(UnityEngine.Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Box") && WeightedDown == true)
+        if (collision.gameObject.CompareTag("Box") && weightedDown == true)
         {
             buttonDown.SetActive(false);
             buttonUp.SetActive(true);
 
             // This will be used for doors later
-            WeightedDown = false;
+            weightedDown = false;
         }
      else
         {
             buttonDown.SetActive(false);
             buttonUp.SetActive(true);
 
-            WeightedDown = false;
+            weightedDown = false;
         }
     }
 }

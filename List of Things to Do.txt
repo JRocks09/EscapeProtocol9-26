@@ -1,13 +1,12 @@
-Anyone can do this:
-
 Samari:
-- Find One Enemy Asset, and program movement (Can also program walk cycle too)
-- Work on Title Screen, Intro Text, game over, end screen functionality >> Changing scenes
+- Program enemy movement
+- Work on Title Screen, Intro Text Scene, end screen functionality >> Changing scenes
 - Checkpoint functionality?
 
 Joseph:
 - 1 complete level
 - Tweaking code as needed
+- Textboxes on sign functionality
 
 Isaiah:
 - Timer UI and Functionality
@@ -18,7 +17,6 @@ Isaiah:
       - If you can't figure this out, let me know and I'll contact Damon to make a bridge asset for the gap instead
 
 Damon:
-- Fix button visual bug
 - Ending screen art
 - Ending Door asset (with lock on it, visually)
 - Starting Door (LABS on it)

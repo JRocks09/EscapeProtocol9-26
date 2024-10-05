@@ -33,9 +33,10 @@ public class ButtonBehavior : MonoBehaviour
 
     
 
-    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
+
+    private void OnCollisionStay2D(UnityEngine.Collision2D other)
     {
-        if (collision.gameObject.CompareTag("Box"))
+        if (other.gameObject.CompareTag("Box"))
         {
             buttonDown.SetActive(true);
             buttonUp.SetActive(false);
@@ -54,9 +55,11 @@ public class ButtonBehavior : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(UnityEngine.Collider2D collision)
+//this will hopefully make the box think its not moving off the button
+
+    private void OnCollisionExit2D(UnityEngine.Collision2D other)
     {
-        if (collision.gameObject.CompareTag("Box") && WeightedDown == true)
+        if (other.gameObject.CompareTag("Box") && WeightedDown == true)
         {
             buttonDown.SetActive(false);
             buttonUp.SetActive(true);

@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float gravityScale = 1.5f;
     public Camera mainCamera;
 
+    bool bothKeysHeld = false;
     bool facingRight = true;
     float moveDirection = 0;
     bool isGrounded = false;
@@ -20,6 +21,16 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
     Transform t;
+    private Animator animator;
+
+	// Sound
+	AudioManager audioManager;
+
+	// Sound Initializing
+	private void Awake()
+	{
+		audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+	}
 
     // Use this for initialization
     void Start()
@@ -31,6 +42,8 @@ public class PlayerController : MonoBehaviour
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
         facingRight = t.localScale.x > 0;
+        animator = GetComponent<Animator>();
+
 
         if (mainCamera)
         {
@@ -41,16 +54,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Movement controls
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
+        // Both Movement Keys Held
+        if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
         {
-            moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
+            bothKeysHeld = true;
         }
         else
         {
-            if (isGrounded || r2d.velocity.magnitude < 0.01f)
+            bothKeysHeld = false;
+        }
+
+        // Movement Controls
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && !(bothKeysHeld))
+        {
+            moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
+            animator.SetBool("IsMoving", true);
+        }
+        else
+        {
+            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
             {
                 moveDirection = 0;
+                animator.SetBool("IsMoving", false);
             }
         }
 
@@ -69,10 +94,23 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Jumping
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        // Jumping Mechanics
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && isGrounded)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+            audioManager.PlaySFX(audioManager.jump, 0.4f);
+
+            
+        }
+
+        // Jumping Animations
+        if (!isGrounded)
+        {
+            animator.SetBool("InAir", true);
+        }
+        else
+        {
+            animator.SetBool("InAir", false);
         }
 
         // Camera follow

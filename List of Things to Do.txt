@@ -1,12 +1,27 @@
-Timer UI and Functionality
-2 Enemies to Start
-Key and Locked Door >> We need assets for this too
-Player Controller implementation
-Draw backgrounds
+Anyone can do this:
 
-Sound and Looping Music (LATER)
+Samari:
+- Find One Enemy Asset, and program movement (Can also program walk cycle too)
+- Work on Title Screen, Intro Text, game over, end screen functionality >> Changing scenes
+- Checkpoint functionality?
 
-2 or 3 levels
-- 1 level for prototype
+Joseph:
+- 1 complete level
+- Tweaking code as needed
 
+Isaiah:
+- Timer UI and Functionality
+- Fix I-Frames of damage (right now damage is calculated individually for each damage source, not altogether)
+- Create condition when the player is dead and make sure the scene is reloaded properly after game over screen is cleared
+      - Can only be implemented once game over screen exists
+- Moving platform >> Goes a fixed distance back and forth horizontally between two position values
+      - If you can't figure this out, let me know and I'll contact Damon to make a bridge asset for the gap instead
 
+Damon:
+- Fix button visual bug
+- Ending screen art
+- Ending Door asset (with lock on it, visually)
+- Starting Door (LABS on it)
+- Checkpoint Asset
+- Sign asset to add text to (really basic sign, no text is needed within the asset)
+- Other art for title and game over screens

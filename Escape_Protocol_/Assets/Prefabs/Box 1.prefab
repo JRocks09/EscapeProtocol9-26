@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3893185237368e74eab199e2a1a99651, type: 3}
-  m_Color: {r: 0.735849, g: 0.52413255, b: 0.39846918, a: 1}
+  m_Color: {r: 0.5882353, g: 0.75508827, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -114,7 +114,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 5
 --- !u!255 &6247640309252987780
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -122,7 +122,7 @@ FixedJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3485520736565958270}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 0}
@@ -131,7 +131,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -39.25, y: -1.56}
+  m_ConnectedAnchor: {x: -39.25, y: -2.51}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!61 &8535093005522019715

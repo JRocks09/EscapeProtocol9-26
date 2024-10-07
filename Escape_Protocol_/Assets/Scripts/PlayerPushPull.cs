@@ -28,7 +28,7 @@ public class PlayerPushPull : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		Physics2D.queriesStartInColliders = false;
+        Physics2D.queriesStartInColliders = false;
 		RaycastHit2D hit= Physics2D.Raycast (transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
 	
 		if (hit.collider != null && hit.collider.gameObject.tag == "Box" && Input.GetKeyDown (KeyCode.P)) 
@@ -37,8 +37,10 @@ public class PlayerPushPull : MonoBehaviour
 			HeavyObject.GetComponent<FixedJoint2D> ().connectedBody = GetComponent<Rigidbody2D> ();
 			HeavyObject.GetComponent<FixedJoint2D> ().enabled = true;
 			HeavyObject.GetComponent<ObjectPull> ().beingPushed = true;
+
 			// Plays Box Push sound
-			audioManager.PlaySFX(audioManager.boxPush, 1.0f);
+			audioManager.PlaySFX(audioManager.boxPush, 1.0f);		
+
 		} 
 		else if (Input.GetKeyUp (KeyCode.P)) 
 		{

@@ -1,25 +1,22 @@
 Samari:
 - Program enemy movement
 - Work on Title Screen, Intro Text Scene, end screen functionality >> Changing scenes
-- Checkpoint functionality?
 
 Joseph:
-- 1 complete level
 - Tweaking code as needed
 - Textboxes on sign functionality
 
 Isaiah:
 - Timer UI and Functionality
 - Fix I-Frames of damage (right now damage is calculated individually for each damage source, not altogether)
-- Create condition when the player is dead and make sure the scene is reloaded properly after game over screen is cleared
-      - Can only be implemented once game over screen exists
+
+- Create game over scene that's switched to when the player dies
+      - On the scene, have "GAME OVER" text and a UI button to reload the Level1 scene
+
 - Moving platform >> Goes a fixed distance back and forth horizontally between two position values
-      - If you can't figure this out, let me know and I'll contact Damon to make a bridge asset for the gap instead
 
 Damon:
 - Ending screen art
-- Ending Door asset (with lock on it, visually)
 - Starting Door (LABS on it)
-- Checkpoint Asset
 - Sign asset to add text to (really basic sign, no text is needed within the asset)
-- Other art for title and game over screens
+- Other art for title screen, if time allows

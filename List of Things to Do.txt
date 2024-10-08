@@ -5,6 +5,7 @@ Samari:
 Joseph:
 - Tweaking code as needed
 - Textboxes on sign functionality
+- Collectible Key
 
 Isaiah:
 - Timer UI and Functionality

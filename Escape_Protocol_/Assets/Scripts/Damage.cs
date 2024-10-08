@@ -6,8 +6,10 @@ public class Damage : MonoBehaviour
 {
     // Takes the current player's health
     public playerHealth currentPlayerHealth;
-    public float invincibilityTimer;
+    public float invincibilityTimer = 2f;
+    public float cooldownTimer = 1f;
     private bool playerInvincible;
+    private bool isOnCooldown;
 
     // Sound
     AudioManager audioManager;
@@ -37,20 +39,32 @@ public class Damage : MonoBehaviour
     private void OnTriggerStay2D(UnityEngine.Collider2D collision)
     {
         // If the player collides with the object
-        if (collision.gameObject.CompareTag("Player") && !playerInvincible)
+        if (collision.gameObject.CompareTag("Player") && !playerInvincible && !isOnCooldown)
         {
             // Takes away health from the player based on the damage value
             collision.gameObject.GetComponent<playerHealth>().health -= damage;
-            Invoke(nameof(InvincibilityOver), invincibilityTimer);
-            playerInvincible = true;
+            MakeInvulnerable();
 
             // Plays Damage Taken sound
             audioManager.PlaySFX(audioManager.damageTaken, 10.0f);
         }
     }
 
-    void InvincibilityOver()
+    void MakeInvulnerable()
+    {
+        playerInvincible = true;
+        Invoke("EndInvulnerability", invincibilityTimer);
+    }
+
+    void EndInvulnerability()
     {
         playerInvincible = false;
+        isOnCooldown = true;
+        Invoke("EndCooldown", cooldownTimer);
+    }
+
+    void EndCooldown()
+    {
+        isOnCooldown = false;
     }
 }

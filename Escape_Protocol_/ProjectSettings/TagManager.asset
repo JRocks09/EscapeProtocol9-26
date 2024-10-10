@@ -6,8 +6,7 @@ TagManager:
   tags:
   - Box
   - Audio
-  - RespawnBounds
-  - Enemy
+  - Collectible
   layers:
   - Default
   - TransparentFX

@@ -18,8 +18,11 @@ public class PlatformController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, posA.position) < .1f) targetPos = posB.position;
-
+        if (Vector2.Distance(transform.position, posA.position) < .1f)
+        {
+            targetPos = posB.position;
+            print("changePos");
+        }
         if (Vector2.Distance(transform.position, posB.position) < .1f) targetPos = posA.position;
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, Speed * Time.deltaTime);

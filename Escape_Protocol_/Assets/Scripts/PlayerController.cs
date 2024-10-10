@@ -23,6 +23,15 @@ public class PlayerController : MonoBehaviour
     Transform t;
     private Animator animator;
 
+    // Knock back for player
+    public float KBForce;
+    public float KBCounter;
+    public float KBTotalTime;
+
+    public bool KnockFromRight;
+
+    public SpriteRenderer sprite;
+
 	// Sound
 	AudioManager audioManager;
 
@@ -120,8 +129,36 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Player Turning Red
+    public IEnumerator FlashRed()
+    {
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = Color.white;
+    }
+
     void FixedUpdate()
     {
+        //Player KnockBack Mechanics
+        if(KBCounter <= 0)
+        {
+            r2d.velocity = new Vector2((moveDirection) * maxSpeed, r2d.velocity.y);
+        }
+        else
+        {
+            if(KnockFromRight == true)
+            {
+                r2d.velocity = new Vector2(-KBForce, KBForce);
+            }
+            if(KnockFromRight == false)
+            {
+                r2d.velocity = new Vector2(KBForce, KBForce);
+            }
+
+            KBCounter -= Time.deltaTime;
+        }
+
+
         Bounds colliderBounds = mainCollider.bounds;
         float colliderRadius = mainCollider.size.x * 0.4f * Mathf.Abs(transform.localScale.x);
         Vector3 groundCheckPos = colliderBounds.min + new Vector3(colliderBounds.size.x * 0.5f, colliderRadius * 0.9f, 0);

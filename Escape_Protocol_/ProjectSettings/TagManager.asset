@@ -7,6 +7,7 @@ TagManager:
   - Box
   - Audio
   - RespawnBounds
+  - Enemy
   layers:
   - Default
   - TransparentFX

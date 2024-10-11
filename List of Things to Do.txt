@@ -5,7 +5,6 @@ Samari:
 Joseph:
 - Tweaking code as needed
 - Textboxes on sign functionality
-- Add decor to level
 - Switch to Good and Bad Ending scenes based on time left on timer
 
 Isaiah:

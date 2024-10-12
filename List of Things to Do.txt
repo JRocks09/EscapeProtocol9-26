@@ -1,11 +1,8 @@
 Samari:
-- Program enemy movement
 - Work on Title Screen, Intro Text Scene, end screen functionality >> Changing scenes
 
 Joseph:
 - Tweaking code as needed
-- Textboxes on sign functionality
-- Add decor to level
 - Switch to Good and Bad Ending scenes based on time left on timer
 
 Isaiah:
@@ -14,8 +11,6 @@ Isaiah:
 
 - Create game over scene that's switched to when the player dies
       - On the scene, have "GAME OVER" text and a UI button to reload the Level1 scene
-
-- Moving platform >> Goes a fixed distance back and forth horizontally between two position values
 
 Damon:
 - Ending screen art >> "Okay" Ending (Beating the game, but not very fast/barely enough time left on timer)

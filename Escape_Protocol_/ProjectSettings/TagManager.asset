@@ -7,14 +7,15 @@ TagManager:
   - Box
   - Audio
   - Collectible
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - IgnoreButton
   - Water
   - UI
-  - 
+  - Button
   - 
   - 
   - 

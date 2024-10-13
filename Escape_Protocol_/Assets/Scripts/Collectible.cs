@@ -22,6 +22,6 @@ public class Collectible : MonoBehaviour
             gameObject.SetActive(false);
         }
         // Sound
-        audioManager.PlaySFX(audioManager.keyPick, 8.0f);
+        audioManager.PlaySFX(audioManager.keyPick, 3.0f);
     }
 }

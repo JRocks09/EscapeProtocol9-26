@@ -4,12 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 //using UnityEngine.EventSystems;
 
-public class ButtonUI : MonoBehaviour
+public class Lvl1ButtonUI : MonoBehaviour
 {
-    [SerializeField] private string TransScreen = "Level1";
-
+    public string TransScreen;
 
     public void NewGameButton()
+    {
+        Invoke("Delay", 0.5f);
+    }
+
+    void Delay()
     {
         SceneManager.LoadScene(TransScreen);
     }

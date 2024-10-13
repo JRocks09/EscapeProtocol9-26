@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 // To access the unity ui elements, in this case being the square
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerHealth : MonoBehaviour
 {
@@ -25,5 +26,10 @@ public class playerHealth : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

@@ -19,6 +19,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip boxPush;
     public AudioClip buttonPush;
     public AudioClip dead;
+    public AudioClip keyPick;
 
     private void Start()
     {

@@ -4,12 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 //using UnityEngine.EventSystems;
 
-public class ButtonUI1 : MonoBehaviour
+public class HomeButtonUI : MonoBehaviour
 {
-    [SerializeField] private string HomeScreen = "Title";
-
+    public string HomeScreen;
 
     public void HomeButton()
+    {
+        Invoke("Delay", 0.5f);
+    }
+
+    void Delay()
     {
         SceneManager.LoadScene(HomeScreen);
     }

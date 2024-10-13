@@ -22,13 +22,13 @@ public class EndLevel : MonoBehaviour
         if(collectibleScript.keyCollected && other.gameObject.CompareTag("Player"))
         {
             // Transition to Alright Ending Scene
-            if (timerScript.remainingTime <= 240)
+            if (timerScript.remainingTime <= 120)
             {
                 SceneManager.LoadScene("Alright_Ending");
             }
 
             // Transition to Good Ending Scene
-            else if (timerScript.remainingTime > 240)
+            else if (timerScript.remainingTime > 120)
             {
                 SceneManager.LoadScene("Good_Ending");
             }

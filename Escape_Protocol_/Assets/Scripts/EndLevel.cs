@@ -1,25 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class EndLevel : MonoBehaviour
 {
-    Collectible collectibleScript;
-    Timer timerScript;
+    public Collectible collectibleScript;
+    public Timer timerScript;
+    public Collider2D player;
 
     // Start is called before the first frame update
     void Start()
     {
-        collectibleScript = GameObject.FindGameObjectWithTag("Collectible").GetComponent<Collectible>();
-        timerScript = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+        player.GetComponent<Collider2D>();
     }
 
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(collectibleScript.keyCollected && other.gameObject.CompareTag("Player"))
+        if(collectibleScript.keyCollected && other == player)
         {
             // Transition to Alright Ending Scene
             if (timerScript.remainingTime <= 120)
